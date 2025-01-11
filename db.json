@@ -1,34 +1,58 @@
 {
   "productos": [
     {
-      "id": "057a",
+      "id": "009",
       "nombre": "Nothing Ear",
       "precio": "US$200",
-      "imagen": "https://i.pinimg.com/736x/10/40/42/104042d58534fcf5f6554e4cf2a81442.jpg"
+      "imagen": "https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/blob/main/assets/products/Nothing%20Ear.jpg"
     },
     {
-      "id": "dd00",
+      "id": "008",
       "nombre": "Tocadiscos moderno transparente",
       "precio": "US$600",
-      "imagen": "https://i.pinimg.com/736x/bd/70/d2/bd70d2da65d66032a5e908a390348de6.jpg"
+      "imagen": "https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/blob/main/assets/products/Tocadiscos%20moderno%20transparente.jpg"
     },
     {
-      "id": "7c10",
+      "id": "006",
       "nombre": "JBL Tune Flex True Wireless Ghost Edition",
       "precio": "US$300",
-      "imagen": "https://i.pinimg.com/736x/f8/20/e1/f820e1649c49103a1ac0bc398de36f1c.jpg"
+      "imagen": "https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/blob/main/assets/products/JBL%20Tune%20Flex%20True%20Wireless%20Ghost%20Edition.jpg"
     },
     {
-      "id": "eb00",
+      "id": "002",
       "nombre": "MOJO68 PLASTIC ",
       "precio": "US$450",
-      "imagen": "https://i.pinimg.com/736x/fe/ec/56/feec5655433924e53b57e9daa47865c8.jpg"
+      "imagen": "https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/blob/main/assets/products/Mojo68%20Plastic.jpg"
     },
     {
-      "id": "eb00",
-      "nombre": "MOJO68 PLASTIC ",
-      "precio": "US$450",
+  "id": "003",
+  "nombre": "consola playstation5 Fat",
+  "precio": "US$550",
+  "imagen": "https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/blob/main/assets/products/consolps5.png"
+    },
+    {
+      "id": "001",
+      "nombre": "consola Xbox series X",
+      "precio": "US$550",
       "imagen": "https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/blob/main/assets/products/consolXbox.png"
+    },
+    {
+      "id": "004",
+      "nombre": "control de xbox",
+      "precio": "US$550",
+      "imagen": "https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/blob/main/assets/products/controlxbox.png"
+    },
+    {
+      "id": "005",
+      "nombre": "control de xbox",
+      "precio": "US$550",
+      "imagen": "https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/blob/main/assets/products/controlxbox.png"
+    },
+    {
+      "id": "007",
+      "nombre": "consola nintendo snes",
+      "precio": "US$550",
+      "imagen": "https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/blob/main/assets/products/snes.png"
     }
   ]
-}
+  }
