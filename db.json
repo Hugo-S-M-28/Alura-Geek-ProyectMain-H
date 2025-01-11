@@ -23,6 +23,12 @@
       "nombre": "MOJO68 PLASTIC ",
       "precio": "US$450",
       "imagen": "https://i.pinimg.com/736x/fe/ec/56/feec5655433924e53b57e9daa47865c8.jpg"
+    },
+    {
+      "id": "eb00",
+      "nombre": "MOJO68 PLASTIC ",
+      "precio": "US$450",
+      "imagen": "https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/blob/main/assets/products/consolXbox.png"
     }
   ]
 }
