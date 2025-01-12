@@ -1,4 +1,6 @@
+/* VARIABLES GLOBALES */
 :root {
+    --fuente-primaria: 'Roboto', sans-serif; /* Fuente principal */
     --azul-oscuro: #154580;
     --azul-medio: #3970BE;
     --azul-claro: #E5F1FF;
@@ -7,38 +9,53 @@
     --morado: #6A0DAD;
     --negro: #000000;
     --blanco: #FFFFFF;
+    --rojizo: #ff3c3c;
 }
 
+/* ESTILOS GENERALES */
 html, body {
-    font-family: 'BeatriceDeck';
+    font-family: var(--fuente-primaria);
     font-style: normal;
     height: 100%;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-}
-
-body {
     background: var(--azul-claro) url('./assets/backgrounds/fondo.png') no-repeat center center fixed;
     background-size: cover;
     color: var(--negro);
     overflow-x: hidden;
 }
 
+/* ENCABEZADO */
 header {
     background-color: var(--azul-medio);
-    text-align: center;
     color: var(--blanco);
     font-size: 1.5rem;
     font-weight: normal;
+    text-align: center;
     box-shadow: 0 4px 5px -1px rgba(0, 0, 0, 0.05);
-    padding: 1rem 0; /* Agrega espacio dentro del header */
+    padding: 1rem 0;
     display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center;
+    align-items: center;
 }
 
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+header h1 img {
+    height: 1em;
+    width: auto;
+    vertical-align: middle;
+}
+
+/* CONTENIDO PRINCIPAL */
 main {
     display: flex;
     justify-content: space-between;
@@ -46,6 +63,7 @@ main {
     flex: 1;
 }
 
+/* SECCIÓN DE PRODUCTOS */
 section.productos {
     width: 65%;
     border-radius: 8px;
@@ -55,101 +73,99 @@ section.productos {
     color: var(--gris);
 }
 
-h1 {
-    font-size: 3rem; /* Tamaño del texto */
-    margin: 0; /* Elimina márgenes extras */
-    display: flex;
-    align-items: center; /* Centra verticalmente texto e imagen */
-    gap: 0.5rem; /* Espacio entre texto e imagen */
-    color: var(--blanco);
-}
-
-h1 img {
-    height: 1em; /* Ajusta la altura al tamaño del texto */
-    width: auto; /* Mantén la proporción de la imagen */
-    vertical-align: middle; /* Alinea con el texto */
-}
-
-h2 {
+section.productos h2 {
     font-size: 1.4rem;
     margin-bottom: 1rem;
     text-align: center;
     color: var(--azul-medio);
 }
 
+/* Disposición de Productos */
 .grid-productos {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas por fila */
+    gap: 1.5rem; /* Espaciado uniforme entre los productos */
     margin: 0 auto;
 }
 
+/* Artículo Individual (Producto) */
 article.producto {
+    display: flex; /* Flexbox para alinear contenido */
+    flex-direction: column; /* Elementos en columna */
+    justify-content: center; /* Centrado vertical */
+    align-items: center; /* Centrado horizontal */
     background-color: var(--gris-claro);
     border-radius: 10px;
-    text-align: center;
-    padding: 0.5rem;
-    transition: transform 0.3s;
+    text-align: center; /* Centra el texto dentro */
+    padding: 1rem; /* Espaciado interno */
+    transition: transform 0.3s, background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para realzar */
 }
 
 article.producto:hover {
-    transform: scale(1.05);
-    background-color: var(--azul-claro);
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el mouse */
+    background-color: var(--azul-claro); /* Cambia el fondo al pasar el mouse */
 }
 
+/* Imagen del Producto */
 article.producto img {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-    padding: 0;
-    border-radius: 8px;
-    object-fit: cover;
+    width: 100%; /* La imagen ocupa el ancho completo del contenedor */
+    max-width: 150px; /* Tamaño máximo para controlar proporciones */
+    height: auto; /* Mantiene proporciones */
+    border-radius: 8px; /* Bordes redondeados */
+    object-fit: cover; /* Ajusta la imagen sin distorsión */
+    margin-bottom: 1rem; /* Espacio debajo de la imagen */
 }
 
+/* Nombre del Producto */
 article.producto h3 {
     margin: 0.5rem 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
     color: var(--gris);
 }
 
+/* Precio del Producto */
 article.producto p {
-    color: var(--morado);
     font-size: 1rem;
     font-weight: bold;
+    color: var(--morado);
+    margin-bottom: 1rem; /* Espacio debajo del precio */
 }
 
+/* Botón Eliminar */
 button.eliminar {
-    background: none; /* Elimina el fondo predeterminado */
-    border: none; /* Elimina el borde predeterminado */
-    color: var(--gris); /* Usa la variable para el color del texto */
-    font-size: 1.2rem; /* Tamaño del texto */
-    cursor: pointer; /* Puntero de mano al pasar por el botón */
-    display: inline-flex; /* Alinea el contenido del botón horizontalmente */
-    align-items: center; /* Centra el ícono y el texto verticalmente */
-    gap: 8px; /* Espacio entre el ícono y el texto */
-    padding: 4px 8px; /* Añade un poco de relleno para facilitar el clic */
-    transition: color 0.3s ease, background-color 0.3s ease; /* Animaciones suaves */
+    font-family: var(--fuente-primaria);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--blanco);
+    background-color: var(--azul-medio);
+    border: none;
+    border-radius: 5px;
+    display: flex; /* Alinea contenido del botón */
+    align-items: center; /* Centra ícono y texto verticalmente */
+    gap: 8px; /* Espacio entre ícono y texto */
+    padding: 10px 16px; /* Espaciado interno */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button.eliminar:hover {
-    color: #e74c3c; /* Cambia el color del texto al pasar el mouse */
+    background-color: var(--rojizo); /* Cambia a color rojizo al pasar el mouse */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
 }
 
-.icono-eliminar {
-    width: 1.2em; /* Tamaño ajustado proporcional al texto */
-    height: auto; /* Mantén la proporción de la imagen */
-    max-width: 24px; /* Asegura que la imagen no sea demasiado grande */
-    vertical-align: middle; /* Alinea con el texto */
-    display: inline-block; /* Garantiza que sea un elemento en línea */
-    object-fit: contain; /* Ajusta la imagen al contenedor sin distorsión */
-    transition: transform 0.3s ease; /* Animación al pasar el mouse */
+button.eliminar img.icono-eliminar {
+    width: 20px; /* Tamaño del ícono */
+    height: 20px; /* Mantén proporción */
 }
 
-button.eliminar:hover .icono-eliminar {
-    transform: scale(1.1); /* Aumenta ligeramente el tamaño del ícono al pasar el mouse */
+button.eliminar span {
+    font-size: 0.85rem;
+    font-weight: 400;
 }
 
+/* FORMULARIO DE AGREGAR PRODUCTO */
 aside.agregar-producto {
     width: 30%;
     text-align: center;
@@ -166,12 +182,11 @@ form {
 form label {
     font-weight: bold;
     text-align: left;
-    display: block;
     color: var(--azul-oscuro);
 }
 
 form input {
-    font-family: 'BeatriceDeck';
+    font-family: var(--fuente-primaria);
     padding: 0.5rem;
     border: 2px solid var(--azul-oscuro);
     background-color: transparent;
@@ -184,20 +199,20 @@ form input {
 }
 
 .botones button {
-    font-family: 'BeatriceDeck';
+    font-family: var(--fuente-primaria);
     padding: 0.5rem;
     background-color: var(--azul-oscuro);
     color: var(--blanco);
     border: none;
-    cursor: pointer;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .botones button:hover {
     background-color: var(--morado);
 }
 
-/* Modal styles */
+/* MODAL */
 .modal {
     display: none;
     position: fixed;
@@ -227,35 +242,27 @@ form input {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     max-width: 400px;
     width: 80%;
-    opacity: 0;
     transform: scale(0.65);
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .modal.show .modal-content {
-    opacity: 1;
     transform: scale(1.3);
 }
 
 .modal-content img {
     max-width: 100%;
-    height: auto;
     border-radius: 5px;
     transition: transform 0.3s ease-in-out;
 }
 
 .modal-content h3 {
-    margin: 10px 0;
     font-size: 1.2rem;
     color: var(--gris);
+    margin: 10px 0;
 }
 
-.usuario {
-    text-decoration: none;
-    font-weight: bold;
-    color: var(--morado);
-}
-
+/* PIE DE PÁGINA */
 footer {
     background-color: var(--azul-medio);
     font-size: 1rem;
@@ -267,14 +274,67 @@ footer {
     box-shadow: 0 -4px 5px -1px rgba(0, 0, 0, 0.05);
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
-    header h1{
-        font-size: 2.5rem;
+/* MEDIA QUERIES */
+
+/* Pantallas Grandes (Desktop, min-width: 1024px) */
+@media (min-width: 1024px) {
+    section.productos {
+        width: 70%; /* Más espacio horizontal para productos */
+        margin: 2rem auto;
     }
+
+    .grid-productos {
+        grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+        gap: 1.5rem; /* Mayor espacio entre productos */
+    }
+
+    aside.agregar-producto {
+        width: 25%; /* Barra lateral más compacta */
+        position: static; /* Posición estándar */
+    }
+
+    .modal-content {
+        width: 40%; /* Modal más pequeño en pantallas grandes */
+    }
+}
+
+/* Tablets y Pantallas Medianas (max-width: 1024px) */
+@media (max-width: 1024px) {
     main {
-        flex-direction: column-reverse;
-        padding: 1rem;
+        flex-direction: column;
+        padding: 2rem 1rem; /* Más espacio vertical */
+    }
+
+    section.productos {
+        width: 80%; /* Más compacto */
+        margin: 2rem auto;
+    }
+
+    .grid-productos {
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+        gap: 1.2rem; /* Espaciado intermedio */
+    }
+
+    aside.agregar-producto {
+        width: 40%; /* Barra lateral más compacta */
+        margin: 2rem auto;
+        position: static; /* Posición estándar */
+    }
+
+    .modal-content {
+        width: 60%; /* Modal adaptado para tablets */
+    }
+}
+
+/* Móviles Grandes (max-width: 768px) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem; /* Texto más pequeño en el encabezado */
+    }
+
+    main {
+        flex-direction: column-reverse; /* Invierte la disposición */
+        padding: 1.5rem 1rem;
     }
 
     section.productos {
@@ -283,16 +343,60 @@ footer {
     }
 
     .grid-productos {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+        gap: 1rem;
     }
 
     aside.agregar-producto {
-        width: 100%;
-        position: static;
+        width: 90%; /* Barra lateral ocupa más ancho */
+        margin: 1.5rem auto;
     }
 
     .modal-content {
-        width: 60%;
+        width: 75%; /* Ajuste proporcional del modal */
+    }
+
+    button.eliminar {
+        font-size: 0.85rem;
+        padding: 8px 12px; /* Botón ligeramente más pequeño */
+    }
+
+    button.eliminar img.icono-eliminar {
+        width: 16px; /* Ícono más pequeño */
     }
 }
 
+/* Móviles Pequeños (max-width: 480px) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.6rem; /* Encabezado más compacto */
+    }
+
+    section.productos {
+        width: 100%; /* Ocupa todo el ancho */
+        margin: 2rem 0;
+    }
+
+    .grid-productos {
+        grid-template-columns: 1fr; /* Una sola columna */
+        gap: 0.8rem;
+    }
+
+    aside.agregar-producto {
+        width: 100%; /* Ancho completo */
+        margin: 1rem 0;
+    }
+
+    .modal-content {
+        width: 90%; /* Modal ocupa casi todo el ancho */
+    }
+
+    button.eliminar {
+        font-size: 0.75rem; /* Botón más pequeño */
+        padding: 6px 10px;
+    }
+
+    button.eliminar img.icono-eliminar {
+        width: 14px; /* Ícono más pequeño */
+    }
+}

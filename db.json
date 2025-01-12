@@ -59,12 +59,6 @@
       "nombre": "Nintendo Switch",
       "precio": "US$300",
       "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/main/assets/products/Nintendo%20Switch.jpg"
-    },
-    {
-      "id": "d277",
-      "nombre": "Gameboy color",
-      "precio": "US$80",
-      "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/refs/heads/main/assets/products/gba.jpg"
     }
   ]
 }
