@@ -4,61 +4,67 @@
       "id": "001",
       "nombre": "consola Xbox series X",
       "precio": "US$550",
-      "imagen": "https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/blob/main/assets/products/consolXbox.png"
+      "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/main/assets/products/consolXbox.jpg"
     },
     {
       "id": "002",
-      "nombre": "MOJO68 PLASTIC ",
+      "nombre": "MOJO68 PLASTIC",
       "precio": "US$450",
-      "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/refs/heads/main/assets/products/Mojo68%20Plastic.jpg?token=GHSAT0AAAAAAC4RQLIHR6AVQQ4BNLN3OL7IZ4DBKKQ"
+      "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/main/assets/products/Mojo68%20Plastic.jpg"
     },
     {
       "id": "003",
       "nombre": "consola playstation5 Fat",
       "precio": "US$550",
-      "imagen": "https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/blob/main/assets/products/consolps5.png"
+      "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/main/assets/products/consolps5.jpg"
     },
     {
       "id": "004",
       "nombre": "control de xbox",
       "precio": "US$85",
-      "imagen": "https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/blob/main/assets/products/controlxbox.png"
+      "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/main/assets/products/controlxbox.jpg"
     },
     {
       "id": "005",
       "nombre": "RTX 5070",
       "precio": "US$600",
-      "imagen": "https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/blob/main/assets/products/RTX%205070.png"
+      "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/main/assets/products/RTX%205070.jpg"
     },
     {
       "id": "006",
       "nombre": "JBL Tune Flex True Wireless Ghost Edition",
       "precio": "US$300",
-      "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/refs/heads/main/assets/products/JBL%20Tune%20Flex%20True%20Wireless%20Ghost%20Edition.jpg?token=GHSAT0AAAAAAC4RQLIGTWV3THFDLPZVHAE4Z4DBHZA"
+      "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/main/assets/products/JBL%20Tune%20Flex%20True%20Wireless%20Ghost%20Edition.jpg"
     },
     {
       "id": "007",
       "nombre": "consola nintendo snes",
       "precio": "US$150",
-      "imagen": "https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/blob/main/assets/products/snes.png"
+      "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/main/assets/products/snes.jpg"
     },
     {
       "id": "008",
       "nombre": "Tocadiscos moderno transparente",
       "precio": "US$600",
-      "imagen": "https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/blob/main/assets/products/Tocadiscos%20moderno%20transparente.jpg"
+      "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/main/assets/products/Tocadiscos%20moderno%20transparente.jpg"
     },
     {
       "id": "009",
       "nombre": "Nothing Ear",
       "precio": "US$200",
-      "imagen": "https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/blob/main/assets/products/Nothing%20Ear.jpg"
+      "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/main/assets/products/Nothing%20Ear.jpg"
     },
     {
       "id": "010",
       "nombre": "Nintendo Switch",
       "precio": "US$300",
-      "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/refs/heads/main/assets/products/Nintendo%20Switch.png?token=GHSAT0AAAAAAC4RQLIH3LUQMABHSWMBAEOYZ4DBFEQ"
+      "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/main/assets/products/Nintendo%20Switch.jpg"
+    },
+    {
+      "id": "d277",
+      "nombre": "Gameboy color",
+      "precio": "US$80",
+      "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/refs/heads/main/assets/products/gba.jpg"
     }
   ]
 }
