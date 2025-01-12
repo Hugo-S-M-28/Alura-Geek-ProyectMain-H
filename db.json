@@ -2,7 +2,7 @@
   "productos": [
     {
       "id": "001",
-      "nombre": "consola Xbox series X",
+      "nombre": "Xbox series X",
       "precio": "US$550",
       "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/main/assets/products/consolXbox.jpg"
     },
@@ -14,7 +14,7 @@
     },
     {
       "id": "003",
-      "nombre": "consola playstation5 Fat",
+      "nombre": "Playstation5 Fat",
       "precio": "US$550",
       "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/main/assets/products/consolps5.jpg"
     },

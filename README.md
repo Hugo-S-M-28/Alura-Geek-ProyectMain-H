@@ -125,12 +125,12 @@ Alura-Geek-ProyectMain/
 
 1. **Clona el Repositorio:**  
    ```bash
-   git clone https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain
+   git clone https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H
    ```  
 
 2. **Navega al Directorio del Proyecto:**  
    ```bash
-   cd Alura-Geek-ProyectMain
+   cd Alura Geek ProyectMain H
    ```  
 
 3. **Abre el Archivo `index.html` en tu Navegador:**  
