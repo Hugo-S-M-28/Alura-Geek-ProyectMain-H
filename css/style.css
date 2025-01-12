@@ -120,18 +120,34 @@ article.producto p {
 }
 
 button.eliminar {
-    background: none;
-    border: none;
-    color: var(--gris);
-    font-size: 1.2rem;
-    cursor: pointer;
+    background: none; /* Elimina el fondo predeterminado */
+    border: none; /* Elimina el borde predeterminado */
+    color: var(--gris); /* Usa la variable para el color del texto */
+    font-size: 1.2rem; /* Tamaño del texto */
+    cursor: pointer; /* Puntero de mano al pasar por el botón */
+    display: inline-flex; /* Alinea el contenido del botón horizontalmente */
+    align-items: center; /* Centra el ícono y el texto verticalmente */
+    gap: 8px; /* Espacio entre el ícono y el texto */
+    padding: 4px 8px; /* Añade un poco de relleno para facilitar el clic */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Animaciones suaves */
+}
+
+button.eliminar:hover {
+    color: #e74c3c; /* Cambia el color del texto al pasar el mouse */
 }
 
 .icono-eliminar {
-    width: 24px; /* Ajusta el tamaño del ícono según necesites */
-    height: 24px; /* Mantén las proporciones */
-    vertical-align: middle; /* Alinea con el texto si es necesario */
-    cursor: pointer; /* Muestra el puntero de mano al pasar por encima */
+    width: 1.2em; /* Tamaño ajustado proporcional al texto */
+    height: auto; /* Mantén la proporción de la imagen */
+    max-width: 24px; /* Asegura que la imagen no sea demasiado grande */
+    vertical-align: middle; /* Alinea con el texto */
+    display: inline-block; /* Garantiza que sea un elemento en línea */
+    object-fit: contain; /* Ajusta la imagen al contenedor sin distorsión */
+    transition: transform 0.3s ease; /* Animación al pasar el mouse */
+}
+
+button.eliminar:hover .icono-eliminar {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño del ícono al pasar el mouse */
 }
 
 aside.agregar-producto {

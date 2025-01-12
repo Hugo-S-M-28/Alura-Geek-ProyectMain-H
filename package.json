@@ -5,13 +5,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Hugo Sánchez Milán",
+  "license": "MIT",
   "description": "",
 
 "repository": {
     "type": "git",
-    "url": "git+https://github.com"
+    "url": "git+https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H"
   },
 "dependencies": {
   "json-server": "^1.0.0-beta.3"
