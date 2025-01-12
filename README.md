@@ -16,7 +16,9 @@ Además, utiliza un servidor JSON simulado para la gestión de datos.
 
 ### 🎨 **Diseño Web Completo**  
 La aplicación incluye una interfaz atractiva y funcional, optimizada para la experiencia del usuario.  
-
+<p align="center"> 
+  <img src="https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/blob/main/assets/Presentación/Captura%20de%20pantalla%20de%20AluraGeek%20aplicaci%C3%B3n.png" alt="AluraGeek">
+</p>
 ---
 
 ## 🚀 **Características Principales**  
