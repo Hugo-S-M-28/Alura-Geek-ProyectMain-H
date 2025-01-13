@@ -7,13 +7,18 @@
   },
   "author": "Hugo Sánchez Milán",
   "license": "MIT",
-  "description": "",
-
-"repository": {
+  "description": "**AluraGeek** es una aplicación web desarrollada como parte del **Challenge Alura LATAM**. Este proyecto permite a los usuarios:   - Listar productos tecnológicos.   - Añadir nuevos productos con detalles (nombre, precio, imagen).   - Eliminar productos existentes.",
+  "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H"
+    "url": "git+https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H.git"
   },
-"dependencies": {
-  "json-server": "^1.0.0-beta.3"
-}
+  "dependencies": {
+    "json-server": "^1.0.0-beta.3"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/issues"
+  },
+  "homepage": "https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H#readme"
 }
