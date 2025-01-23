@@ -153,4 +153,3 @@ Si tienes preguntas, comentarios o estás interesado en mi trabajo, no dudes en 
 
 ¡Gracias por visitar el proyecto **AluraGeek**! 🎮  
 Espero que disfrutes explorando mi trabajo y aprendiendo de este proyecto.  
-
