@@ -1,10 +1,9 @@
 {
   "name": "wishlist-eventos",
   "version": "1.0.0",
-  "main": "js/script.js",
   "scripts": {
     "api": "json-server --watch db.json --port 3001",
-    "test": "node --check js/script.js && node --check js/wishlist.js && node --check js/form.js && node --check js/modal.js"
+    "test": "node --check js/script.js && node --check js/wishlist.js && node --check js/form.js && node --check js/modal.js && node --check js/config.js && node --check js/utils.js && node --check js/ui.js"
   },
   "author": "Hugo Sánchez Milán",
   "license": "MIT",
@@ -14,7 +13,7 @@
     "url": "git+https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H.git"
   },
   "dependencies": {
-    "json-server": "^1.0.0-beta.3"
+    "json-server": "1.0.0-beta.3"
   },
   "keywords": [],
   "type": "module",

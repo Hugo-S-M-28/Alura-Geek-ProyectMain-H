@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lista de deseos interactiva para eventos especiales. Comparte tus regalos favoritos y permite que tus amigos los reserven.">
     <title>Mi lista de deseos</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="icon" href="./assets/icons/icon.png" type="image/png">
@@ -16,23 +17,35 @@
     </header>
 
     <main>
+        <!-- 1. SECCIÓN DE LA LISTA DE DESEOS -->
         <section class="deseos">
             <div class="section-header">
                 <div>
                     <h2>MIS DESEOS</h2>
+                    <!-- Contador dinámico que actualizará JavaScript indicando cuántos hay reservados -->
                     <p id="contador-deseos" class="contador-deseos">Cargando deseos...</p>
                 </div>
+                <!-- Enlace especial para entrar en modo Administrador/Propietario a través de la URL -->
                 <a class="admin-link" href="./index.html?admin=true">Modo propietario</a>
+                <a class="logout-link" id="logout-link" href="#" hidden>Salir de modo propietario</a>
             </div>
 
+            <!-- Grilla vacía. Aquí es donde JavaScript inyectará las tarjetas de deseos dinámicamente.
+                 aria-live="polite" sirve para avisar a lectores de pantalla cuando este contenedor cambie. -->
             <div class="grid-deseos" aria-live="polite"></div>
 
+            <!-- PLANTILLA (TEMPLATE): Un elemento clave para aprender desarrollo web moderno.
+                 Todo lo que esté dentro de <template> NO se muestra en el navegador por defecto.
+                 JavaScript lo usará como un molde de plastilina para copiarlo (clonarlo) muchas veces
+                 y llenarlo con los datos reales de cada regalo (nombre, precio, etc.). -->
             <template id="deseo-template">
                 <article class="deseo-card">
+                    <!-- Imagen del producto que al darle clic abrirá detalles avanzados en una ventana emergente -->
                     <button class="imagen-deseo" type="button" aria-label="Ver detalle del deseo">
-                        <img src="" alt="">
+                        <img src="" alt="" loading="lazy">
                     </button>
                     <div class="contenido-deseo">
+                        <!-- Etiquetas de texto que rellenaremos usando JavaScript -->
                         <span class="estado-deseo"></span>
                         <h3></h3>
                         <p class="descripcion-deseo"></p>
@@ -40,7 +53,9 @@
                         <p class="reserva-deseo"></p>
                     </div>
                     <div class="acciones-deseo">
+                        <!-- Enlace externo para ir a la tienda original (Amazon, MercadoLibre, etc.) -->
                         <a class="ver-producto" href="#" target="_blank" rel="noopener noreferrer">Ver producto</a>
+                        <!-- Botones que se mostrarán u ocultarán usando JS según el rol del usuario o estado del regalo -->
                         <button class="reservar" type="button">Reservar</button>
                         <button class="editar" type="button">Editar</button>
                         <button class="eliminar" type="button">
@@ -52,9 +67,14 @@
             </template>
         </section>
 
+        <!-- 2. PANEL DEL PROPIETARIO (AGREGAR / EDITAR)
+             Tiene el atributo 'hidden' (oculto). JavaScript decidirá quitarle este atributo
+             solo si detecta el parámetro "?admin=true" en la URL. -->
         <aside class="panel-propietario" id="owner-panel" hidden>
             <h2>AGREGAR DESEO</h2>
             <form id="wishlist-form">
+                <!-- Input de tipo oculto (hidden). No se ve en pantalla, pero nos sirve para
+                     guardar temporalmente el ID del deseo cuando estamos editando uno existente. -->
                 <input type="hidden" id="deseo-id">
 
                 <label for="nombre">Nombre del deseo:</label>
@@ -67,7 +87,7 @@
                 <input type="url" id="enlace" placeholder="https://www.amazon.com/..." required>
 
                 <label for="precio">Precio aproximado:</label>
-                <input type="text" id="precio" placeholder="US$59.99" required>
+                <input type="text" id="precio" placeholder="US$59.99" inputmode="decimal" required>
 
                 <label for="imagen">URL de la imagen:</label>
                 <input type="url" id="imagen" placeholder="https://..." required>
@@ -75,13 +95,18 @@
                 <div class="botones">
                     <button id="submit-button" type="submit">Guardar deseo</button>
                     <button type="reset">Limpiar</button>
+                    <!-- Este botón solo se mostrará cuando estemos editando un deseo -->
                     <button id="cancel-edit-button" type="button" hidden>Cancelar edición</button>
                 </div>
             </form>
         </aside>
 
+        <!-- 3. VENTANA EMERGENTE (MODAL DETALLES)
+             Oculta por defecto usando CSS. Se muestra agregando la clase 'show' con JS.
+             role="dialog" e inputs aria-* ayudan a la accesibilidad del sitio. -->
         <div id="modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
             <div class="modal-content">
+                <!-- Botón para cerrar el modal -->
                 <button id="modal-close" class="modal-close" type="button" aria-label="Cerrar modal">×</button>
                 <img id="modal-image" src="" alt="">
                 <h3 id="modal-title"></h3>
@@ -106,6 +131,8 @@
         <p>ALURA LATAM - 2024</p>
     </footer>
 
+    <!-- Cargamos nuestro script principal como un módulo (type="module")
+         lo que nos permite usar la sintaxis moderna "import" y "export" de JavaScript -->
     <script type="module" src="./js/script.js"></script>
 </body>
 </html>

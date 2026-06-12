@@ -1,7 +1,7 @@
 {
   "deseos": [
     {
-      "id": "001",
+      "id": 1,
       "nombre": "Xbox Series X",
       "descripcion": "Consola de videojuegos de alto rendimiento para jugar en 4K.",
       "precio": 550,
@@ -11,17 +11,17 @@
       "es_propietario": true
     },
     {
-      "id": "002",
+      "id": 2,
       "nombre": "MOJO68 Plastic",
       "descripcion": "Teclado mecánico compacto con diseño transparente.",
       "precio": 450,
-      "imagen": "./assets/products/Mojo68 Plastic.jpg",
+      "imagen": "./assets/products/mojo68-plastic.jpg",
       "enlace": "https://www.amazon.com/s?k=MOJO68+Plastic",
       "reservado_por": null,
       "es_propietario": true
     },
     {
-      "id": "003",
+      "id": 3,
       "nombre": "PlayStation 5 Fat",
       "descripcion": "Consola PlayStation 5 edición estándar.",
       "precio": 550,
@@ -31,7 +31,7 @@
       "es_propietario": true
     },
     {
-      "id": "004",
+      "id": 4,
       "nombre": "Control de Xbox",
       "descripcion": "Control inalámbrico compatible con Xbox y PC.",
       "precio": 85,
@@ -41,27 +41,27 @@
       "es_propietario": true
     },
     {
-      "id": "005",
+      "id": 5,
       "nombre": "RTX 5070",
       "descripcion": "Tarjeta gráfica para gaming, edición y creación de contenido.",
       "precio": 600,
-      "imagen": "./assets/products/RTX 5070.jpg",
+      "imagen": "./assets/products/rtx-5070.jpg",
       "enlace": "https://www.amazon.com/s?k=RTX+5070",
       "reservado_por": null,
       "es_propietario": true
     },
     {
-      "id": "006",
+      "id": 6,
       "nombre": "JBL Tune Flex True Wireless Ghost Edition",
       "descripcion": "Audífonos inalámbricos transparentes con estuche de carga.",
       "precio": 300,
-      "imagen": "./assets/products/JBL Tune Flex True Wireless Ghost Edition.jpg",
+      "imagen": "./assets/products/jbl-tune-flex-ghost-edition.jpg",
       "enlace": "https://www.amazon.com/s?k=JBL+Tune+Flex+Ghost+Edition",
       "reservado_por": null,
       "es_propietario": true
     },
     {
-      "id": "007",
+      "id": 7,
       "nombre": "Consola Nintendo SNES",
       "descripcion": "Consola retro para colección o tardes de juegos clásicos.",
       "precio": 150,
@@ -71,31 +71,31 @@
       "es_propietario": true
     },
     {
-      "id": "008",
+      "id": 8,
       "nombre": "Tocadiscos moderno transparente",
       "descripcion": "Tocadiscos con diseño transparente para escuchar vinilos.",
       "precio": 600,
-      "imagen": "./assets/products/Tocadiscos moderno transparente.jpg",
+      "imagen": "./assets/products/tocadiscos-moderno-transparente.jpg",
       "enlace": "https://www.mercadolibre.com.mx/jm/search?as_word=tocadiscos+transparente",
       "reservado_por": null,
       "es_propietario": true
     },
     {
-      "id": "009",
+      "id": 9,
       "nombre": "Nothing Ear",
       "descripcion": "Audífonos inalámbricos con diseño minimalista y estuche compacto.",
       "precio": 200,
-      "imagen": "./assets/products/Nothing Ear.jpg",
+      "imagen": "./assets/products/nothing-ear.jpg",
       "enlace": "https://www.amazon.com/s?k=Nothing+Ear",
       "reservado_por": null,
       "es_propietario": true
     },
     {
-      "id": "010",
+      "id": 10,
       "nombre": "Nintendo Switch",
       "descripcion": "Consola híbrida para jugar en casa o en modo portátil.",
       "precio": 300,
-      "imagen": "./assets/products/Nintendo Switch.jpg",
+      "imagen": "./assets/products/nintendo-switch.jpg",
       "enlace": "https://www.amazon.com/s?k=Nintendo+Switch",
       "reservado_por": null,
       "es_propietario": true

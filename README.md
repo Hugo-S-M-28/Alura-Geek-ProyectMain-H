@@ -1,70 +1,130 @@
-# Mi lista de deseos
+# 🎁 **Mi Lista de Deseos (Wishlist)**
 
-Aplicación web local para crear una wishlist de cumpleaños, navidad u otros eventos. El propietario agrega deseos con imagen, precio aproximado y link del producto en tiendas como Amazon o Mercado Libre. Los amigos pueden ver la lista y reservar un regalo para evitar compras duplicadas.
+¡Bienvenido a **Mi Lista de Deseos**! 🌟 Esta es una aplicación web interactiva y moderna diseñada para gestionar y compartir tus regalos de cumpleaños, navidad u otros eventos especiales.
 
-## Funcionalidades
+El propietario de la lista puede agregar, editar y eliminar deseos, mientras que los amigos pueden explorar las tarjetas, ver detalles extendidos y reservar regalos para evitar compras duplicadas. ¡Todo con una interfaz de diseño premium y una experiencia súper fluida! 🚀
 
-- Ver deseos con imagen, nombre, descripción, precio y estado.
-- Abrir el link de compra de cada producto.
-- Reservar un deseo escribiendo el nombre de quien lo comprará.
-- Modo propietario con `?admin=true` para añadir, editar y eliminar deseos.
-- Persistencia local usando `json-server` sobre `db.json`.
+---
 
-## Ejecutar en local
+## 🎨 **Captura de Pantalla**
 
-1. Instala dependencias:
+<p align="center">
+  <img src="https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/blob/main/assets/Presentación/Captura%20de%20pantalla%20de%20AluraGeek%20aplicaci%C3%B3n.png" alt="Mi Lista de Deseos">
+</p>
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Inicia la API local:
+## ✨ **Características Principales**
 
-   ```bash
-   npm run api
-   ```
+### 👥 **Roles de Usuario Inteligentes**
 
-   También puedes usar:
+* 👤 **Modo Invitado (Guest):**
+  * Explora la galería de deseos en tiempo real. 💳
+  * Visualiza detalles ampliados en una ventana emergente (modal). 🔎
+  * Reserva regalos escribiendo su nombre (el artículo se deshabilita para evitar reservas duplicadas). 🤝
+* 🔑 **Modo Propietario (Admin):**
+  * Protegido por una capa de validación de **PIN de Seguridad** (`1234`) 🛡️.
+  * Habilita un panel lateral interactivo para **Crear** y **Editar** deseos. ✏️
+  * Permite **Eliminar** artículos con confirmaciones de seguridad personalizadas. 🗑️
+  * Incluye un enlace para **Cerrar Sesión** de administración de forma segura. 🚪
 
-   ```bash
-   npx json-server --watch db.json --port 3001
-   ```
+### 💅 **Experiencia de Usuario Premium (UX)**
 
-3. Abre `index.html` con Live Server o con un servidor estático local.
+* 🔔 **Sistema de Diálogos Custom (ES6 Promises):** Olvídate de los antiestéticos y bloqueantes `alert()`, `confirm()` y `prompt()` del navegador. Hemos desarrollado modales y notificaciones flotantes (Toasts) estilizados con CSS y animados que corren de forma asíncrona. 💬
+* ⚡ **Pantallas de Carga Shimmer (Skeletons):** Mientras la aplicación descarga la información del servidor, se muestra una grilla de tarjetas con animación de esqueleto parpadeante. ⏳
+* 🎭 **Transiciones Fluidas:** Las ventanas modales e interfaces de confirmación cuentan con efectos de fundido suaves (`opacity` + `visibility` en CSS). 👁️
+* ♿ **Accesibilidad Teclado (Focus Trap):** Al abrir una ventana modal o de diálogo, el foco del teclado queda atrapado automáticamente dentro del modal (WCAG 2.1), facilitando la navegación para lectores de pantalla. ⌨️
 
-## Modos de uso
+---
 
-- Amigos/invitados: abre la app sin parámetros, por ejemplo `index.html`.
-- Propietario: abre la app con `?admin=true`, por ejemplo `index.html?admin=true`.
+## 🛠️ **Tecnologías Utilizadas**
 
-El modo propietario es solo una simulación para demo local. No incluye autenticación real.
+* **HTML5:** Marcado estructurado y semántico con soporte nativo de `<template>`. 🏷️
+* **CSS3 (Vanilla):** Diseño adaptativo (*responsive*), variables CSS `:root`, animaciones personalizadas y diseño de grillas CSS Grid y Flexbox. 🎨
+* **JavaScript (ES6 Modules):** Programación modular nativa (`import`/`export`), peticiones asíncronas (`fetch`, `async/await`), Promesas personalizadas y manipulación avanzada del DOM. 🧠
+* **JSON-Server:** Simulación de API REST local y base de datos reactiva mediante un archivo JSON. 💾
 
-## API local
+---
 
-La app consume:
+## 📂 **Estructura del Proyecto**
 
-```txt
-http://localhost:3001/deseos
+```plaintext
+Alura-Geek-ProyectMain/
+├── assets/                  # 📂 Recursos estáticos
+│   ├── icons/               # 📌 Íconos de la interfaz (delete, github, linkedin, etc.)
+│   ├── products/            # 🖼️ Imágenes de los productos en formato kebab-case
+│   └── backgrounds/         # 🌌 Fondos y texturas visuales
+├── css/                     # 📂 Hojas de estilo
+│   └── style.css            # 🎨 Archivo CSS principal con variables y animaciones
+├── js/                      # 📂 Lógica modular de la aplicación
+│   ├── config.js            # ⚙️ Constantes del proyecto (API_URL, PIN de administrador)
+│   ├── utils.js             # 🧮 Utilidades generales (formateador de precios DRY)
+│   ├── ui.js                # 💬 Modales y notificaciones Toasts basados en Promises
+│   ├── script.js            # 🎼 Orquestador y validador de acceso de administrador
+│   ├── modal.js             # 🔎 Control del modal detallado y Focus Trap de accesibilidad
+│   ├── form.js              # 📝 Validación y comportamiento del formulario
+│   └── wishlist.js          # 🛍️ Lógica de peticiones CRUD (API) y renderizado
+├── db.json                  # 💾 Base de datos simulada (API Server)
+├── index.html               # 🌐 Estructura HTML principal optimizada (SEO y accesibilidad)
+├── package.json             # ⚙️ Dependencias y comandos de prueba
+└── README.md                # 📄 Documentación del proyecto (¡esta que estás leyendo!)
 ```
 
-Modelo de cada deseo:
+---
 
-```json
-{
-  "id": "001",
-  "nombre": "Auriculares inalámbricos",
-  "descripcion": "Color negro, cancelación de ruido",
-  "precio": 59.99,
-  "imagen": "https://ejemplo.com/auriculares.jpg",
-  "enlace": "https://www.amazon.com/...",
-  "reservado_por": null,
-  "es_propietario": true
-}
+## 🚀 **Instalación y Configuración**
+
+Sigue estos sencillos pasos para echar a andar el proyecto en tu entorno local:
+
+### 1️⃣ Descargar el Proyecto
+
+Clona este repositorio en tu computadora usando git:
+
+```bash
+git clone https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H.git
+cd Alura-Geek-ProyectMain-H
 ```
 
-## Tecnologías
+### 2️⃣ Instalar las Dependencias
 
-- HTML5
-- CSS3
-- JavaScript nativo con módulos ES
-- JSON Server
+Asegúrate de instalar la versión exacta compatible de `json-server` configurada en el archivo del proyecto:
+
+```bash
+npm install
+```
+
+### 3️⃣ Iniciar el Servidor de Datos (API)
+
+Levanta la API simulada ejecutando el script preconfigurado:
+
+```bash
+npm run api
+```
+
+El servidor backend se iniciará en [http://localhost:3001/deseos](http://localhost:3001/deseos). 📡
+
+### 4️⃣ Lanzar la Aplicación
+
+Para poder probar los módulos nativos de JS, abre el archivo `index.html` sirviéndolo desde un servidor web de desarrollo local.
+> 💡 **Tip:** Te recomendamos instalar la extensión **Live Server** en Visual Studio Code y hacer clic en **"Go Live"** en la esquina inferior derecha.
+
+---
+
+## 🧪 **Pruebas de Calidad**
+
+La aplicación incluye un script para comprobar que no existan errores sintácticos de JavaScript en ninguno de los módulos del proyecto:
+
+```bash
+npm run test
+```
+
+---
+
+## 📬 **Contacto y Créditos**
+
+Este proyecto fue desarrollado y refactorizado por **Hugo Sánchez Milán** como parte de la formación en **Alura LATAM** 🎓.
+
+* **LinkedIn:** [Hugo Sánchez Milán](https://www.linkedin.com/in/hugo-s-197b81278/) 💼
+* **GitHub:** [Hugo-S-M-28](https://github.com/Hugo-S-M-28) 🐙
+
+¡Espero que disfrutes explorando y aprendiendo de este proyecto! 🎮
