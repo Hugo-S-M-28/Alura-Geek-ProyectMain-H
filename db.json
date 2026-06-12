@@ -1,64 +1,104 @@
 {
-  "productos": [
+  "deseos": [
     {
       "id": "001",
-      "nombre": "Xbox series X",
-      "precio": "US$550",
-      "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/main/assets/products/consolXbox.jpg"
+      "nombre": "Xbox Series X",
+      "descripcion": "Consola de videojuegos de alto rendimiento para jugar en 4K.",
+      "precio": 550,
+      "imagen": "./assets/products/consolXbox.jpg",
+      "enlace": "https://www.amazon.com/s?k=Xbox+Series+X",
+      "reservado_por": null,
+      "es_propietario": true
     },
     {
       "id": "002",
-      "nombre": "MOJO68 PLASTIC",
-      "precio": "US$450",
-      "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/main/assets/products/Mojo68%20Plastic.jpg"
+      "nombre": "MOJO68 Plastic",
+      "descripcion": "Teclado mecánico compacto con diseño transparente.",
+      "precio": 450,
+      "imagen": "./assets/products/Mojo68 Plastic.jpg",
+      "enlace": "https://www.amazon.com/s?k=MOJO68+Plastic",
+      "reservado_por": null,
+      "es_propietario": true
     },
     {
       "id": "003",
-      "nombre": "Playstation5 Fat",
-      "precio": "US$550",
-      "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/main/assets/products/consolps5.jpg"
+      "nombre": "PlayStation 5 Fat",
+      "descripcion": "Consola PlayStation 5 edición estándar.",
+      "precio": 550,
+      "imagen": "./assets/products/consolps5.jpg",
+      "enlace": "https://www.amazon.com/s?k=PlayStation+5",
+      "reservado_por": null,
+      "es_propietario": true
     },
     {
       "id": "004",
-      "nombre": "control de xbox",
-      "precio": "US$85",
-      "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/main/assets/products/controlxbox.jpg"
+      "nombre": "Control de Xbox",
+      "descripcion": "Control inalámbrico compatible con Xbox y PC.",
+      "precio": 85,
+      "imagen": "./assets/products/controlxbox.jpg",
+      "enlace": "https://www.amazon.com/s?k=control+xbox",
+      "reservado_por": null,
+      "es_propietario": true
     },
     {
       "id": "005",
       "nombre": "RTX 5070",
-      "precio": "US$600",
-      "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/main/assets/products/RTX%205070.jpg"
+      "descripcion": "Tarjeta gráfica para gaming, edición y creación de contenido.",
+      "precio": 600,
+      "imagen": "./assets/products/RTX 5070.jpg",
+      "enlace": "https://www.amazon.com/s?k=RTX+5070",
+      "reservado_por": null,
+      "es_propietario": true
     },
     {
       "id": "006",
       "nombre": "JBL Tune Flex True Wireless Ghost Edition",
-      "precio": "US$300",
-      "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/main/assets/products/JBL%20Tune%20Flex%20True%20Wireless%20Ghost%20Edition.jpg"
+      "descripcion": "Audífonos inalámbricos transparentes con estuche de carga.",
+      "precio": 300,
+      "imagen": "./assets/products/JBL Tune Flex True Wireless Ghost Edition.jpg",
+      "enlace": "https://www.amazon.com/s?k=JBL+Tune+Flex+Ghost+Edition",
+      "reservado_por": null,
+      "es_propietario": true
     },
     {
       "id": "007",
-      "nombre": "consola nintendo snes",
-      "precio": "US$150",
-      "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/main/assets/products/snes.jpg"
+      "nombre": "Consola Nintendo SNES",
+      "descripcion": "Consola retro para colección o tardes de juegos clásicos.",
+      "precio": 150,
+      "imagen": "./assets/products/snes.jpg",
+      "enlace": "https://www.mercadolibre.com.mx/jm/search?as_word=consola+nintendo+snes",
+      "reservado_por": null,
+      "es_propietario": true
     },
     {
       "id": "008",
       "nombre": "Tocadiscos moderno transparente",
-      "precio": "US$600",
-      "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/main/assets/products/Tocadiscos%20moderno%20transparente.jpg"
+      "descripcion": "Tocadiscos con diseño transparente para escuchar vinilos.",
+      "precio": 600,
+      "imagen": "./assets/products/Tocadiscos moderno transparente.jpg",
+      "enlace": "https://www.mercadolibre.com.mx/jm/search?as_word=tocadiscos+transparente",
+      "reservado_por": null,
+      "es_propietario": true
     },
     {
       "id": "009",
       "nombre": "Nothing Ear",
-      "precio": "US$200",
-      "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/main/assets/products/Nothing%20Ear.jpg"
+      "descripcion": "Audífonos inalámbricos con diseño minimalista y estuche compacto.",
+      "precio": 200,
+      "imagen": "./assets/products/Nothing Ear.jpg",
+      "enlace": "https://www.amazon.com/s?k=Nothing+Ear",
+      "reservado_por": null,
+      "es_propietario": true
     },
     {
       "id": "010",
       "nombre": "Nintendo Switch",
-      "precio": "US$300",
-      "imagen": "https://raw.githubusercontent.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/main/assets/products/Nintendo%20Switch.jpg"
+      "descripcion": "Consola híbrida para jugar en casa o en modo portátil.",
+      "precio": 300,
+      "imagen": "./assets/products/Nintendo Switch.jpg",
+      "enlace": "https://www.amazon.com/s?k=Nintendo+Switch",
+      "reservado_por": null,
+      "es_propietario": true
     }
   ]
 }

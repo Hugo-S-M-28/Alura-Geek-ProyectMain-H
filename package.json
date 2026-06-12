@@ -1,13 +1,14 @@
 {
-  "name": "alura-geek",
+  "name": "wishlist-eventos",
   "version": "1.0.0",
-  "main": "script.js",
+  "main": "js/script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "api": "json-server --watch db.json --port 3001",
+    "test": "node --check js/script.js && node --check js/wishlist.js && node --check js/form.js && node --check js/modal.js"
   },
   "author": "Hugo Sánchez Milán",
   "license": "MIT",
-  "description": "**AluraGeek** es una aplicación web desarrollada como parte del **Challenge Alura LATAM**. Este proyecto permite a los usuarios:   - Listar productos tecnológicos.   - Añadir nuevos productos con detalles (nombre, precio, imagen).   - Eliminar productos existentes.",
+  "description": "Wishlist local para eventos especiales con links de compra y reservas por amigos usando HTML, CSS, JavaScript nativo y json-server.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H.git"
@@ -16,7 +17,7 @@
     "json-server": "^1.0.0-beta.3"
   },
   "keywords": [],
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/Hugo-S-M-28/Alura-Geek-ProyectMain-H/issues"
   },

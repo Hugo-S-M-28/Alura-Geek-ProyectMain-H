@@ -1,47 +1,101 @@
-// Función para manejar el envío del formulario
-export async function handleFormSubmit(event) {
-    event.preventDefault();
+export function setupForm({ isOwner, onSave }) {
+    const ownerPanel = document.getElementById('owner-panel');
+    const form = document.getElementById('wishlist-form');
+    const idInput = document.getElementById('deseo-id');
+    const nombreInput = document.getElementById('nombre');
+    const descripcionInput = document.getElementById('descripcion');
+    const enlaceInput = document.getElementById('enlace');
+    const precioInput = document.getElementById('precio');
+    const imagenInput = document.getElementById('imagen');
+    const submitButton = document.getElementById('submit-button');
+    const cancelEditButton = document.getElementById('cancel-edit-button');
 
-    const nombre = document.getElementById('nombre').value;
-    const precio = document.getElementById('precio').value;
-    const imagen = document.getElementById('imagen').value;
+    ownerPanel.hidden = !isOwner;
 
-    const newProduct = { nombre, precio, imagen };
+    if (!isOwner) {
+        return {
+            startEdit: () => {},
+        };
+    }
 
-    try {
-        const response = await fetch('http://localhost:3001/productos', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(newProduct),
-        });
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
 
-        if (response.ok) {
-            const savedProduct = await response.json();
-            renderProduct(savedProduct);
-            document.getElementById('add-product-form').reset();
-        } else {
-            console.error('Error al guardar el producto');
+        const deseo = {
+            nombre: nombreInput.value.trim(),
+            descripcion: descripcionInput.value.trim(),
+            enlace: enlaceInput.value.trim(),
+            precio: parsePrice(precioInput.value),
+            imagen: imagenInput.value.trim(),
+        };
+
+        if (!deseo.nombre || !deseo.descripcion || !deseo.enlace || !deseo.imagen) {
+            alert('Completa todos los campos del deseo.');
+            return;
         }
-    } catch (error) {
-        console.error('Error de conexión', error);
+
+        try {
+            await onSave(idInput.value || null, deseo);
+            resetForm();
+        } catch (error) {
+            console.error(error);
+            alert('No se pudo guardar el deseo. Revisa que el servidor esté activo.');
+        }
+    });
+
+    form.addEventListener('reset', () => {
+        setTimeout(resetEditState, 0);
+    });
+
+    cancelEditButton.addEventListener('click', resetForm);
+    setupPriceMask(precioInput);
+
+    return {
+        startEdit(deseo) {
+            idInput.value = deseo.id;
+            nombreInput.value = deseo.nombre;
+            descripcionInput.value = deseo.descripcion || '';
+            enlaceInput.value = deseo.enlace || '';
+            precioInput.value = formatEditablePrice(deseo.precio);
+            imagenInput.value = deseo.imagen || '';
+            submitButton.textContent = 'Guardar cambios';
+            cancelEditButton.hidden = false;
+            ownerPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        },
+    };
+
+    function resetForm() {
+        form.reset();
+        resetEditState();
+    }
+
+    function resetEditState() {
+        idInput.value = '';
+        submitButton.textContent = 'Guardar deseo';
+        cancelEditButton.hidden = true;
     }
 }
 
-// Función para validar y formatear el precio
-export function validatePriceInput() {
-    const precioInput = document.getElementById('precio');
-    precioInput.addEventListener('input', function () {
-        let value = this.value.replace(/[^0-9.,]/g, '');
-        const parts = value.split(/[,|.]/);
-        if (parts.length > 2) {
-            value = parts[0] + '.' + parts[1];
-        }
-        this.value = value ? `US$${value}` : '';
+function setupPriceMask(input) {
+    input.addEventListener('input', () => {
+        const value = input.value.replace(/[^0-9.,]/g, '').replace(',', '.');
+        input.value = value ? `US$${value}` : '';
     });
 
-    precioInput.addEventListener('focus', function () {
-        if (!this.value.startsWith('US$')) {
-            this.value = 'US$' + this.value;
+    input.addEventListener('focus', () => {
+        if (input.value && !input.value.startsWith('US$')) {
+            input.value = `US$${input.value}`;
         }
     });
+}
+
+function parsePrice(value) {
+    const normalized = value.replace(/[^0-9.,]/g, '').replace(',', '.');
+    const amount = Number(normalized);
+    return Number.isNaN(amount) ? 0 : amount;
+}
+
+function formatEditablePrice(value) {
+    const amount = Number(value);
+    return Number.isNaN(amount) ? '' : `US$${amount}`;
 }

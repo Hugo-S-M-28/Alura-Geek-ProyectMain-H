@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AluraGeek</title>
+    <title>Mi lista de deseos</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="icon" href="./assets/icons/icon.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
@@ -11,73 +11,101 @@
 <body>
     <header>
         <div class="logo">
-            <h1>ALURA GEEK <img src="./assets/icons/palanca.png" alt="Icono de Alura Geek"></h1>
+            <h1>Mi lista de deseos <img src="./assets/icons/palanca.png" alt="Icono de lista de deseos"></h1>
         </div>
     </header>
 
     <main>
-        <!-- Sección principal de productos -->
-        <section class="productos">
-            <h2>MIS PRODUCTOS:</h2>
-            <div class="grid-productos">
-                <!-- Cada producto -->
-                <article hidden class="producto-nuevo">
-                    <img src="" alt="">
-                    <h3></h3>
-                    <p></p>
-                    <button class="eliminar" aria-label="Eliminar producto">
-                        <img src="./assets/icons/delete.png" alt="Eliminar producto" class="icono-eliminar">
-                        <span>Eliminar producto</span>
-                    </button>                    
-                </article>
-                
+        <section class="deseos">
+            <div class="section-header">
+                <div>
+                    <h2>MIS DESEOS</h2>
+                    <p id="contador-deseos" class="contador-deseos">Cargando deseos...</p>
+                </div>
+                <a class="admin-link" href="./index.html?admin=true">Modo propietario</a>
             </div>
+
+            <div class="grid-deseos" aria-live="polite"></div>
+
+            <template id="deseo-template">
+                <article class="deseo-card">
+                    <button class="imagen-deseo" type="button" aria-label="Ver detalle del deseo">
+                        <img src="" alt="">
+                    </button>
+                    <div class="contenido-deseo">
+                        <span class="estado-deseo"></span>
+                        <h3></h3>
+                        <p class="descripcion-deseo"></p>
+                        <p class="precio-deseo"></p>
+                        <p class="reserva-deseo"></p>
+                    </div>
+                    <div class="acciones-deseo">
+                        <a class="ver-producto" href="#" target="_blank" rel="noopener noreferrer">Ver producto</a>
+                        <button class="reservar" type="button">Reservar</button>
+                        <button class="editar" type="button">Editar</button>
+                        <button class="eliminar" type="button">
+                            <img src="./assets/icons/delete.png" alt="" class="icono-eliminar">
+                            <span>Eliminar</span>
+                        </button>
+                    </div>
+                </article>
+            </template>
         </section>
 
-        <!-- Sección secundaria para agregar productos -->
-        <aside class="agregar-producto">
-            <h2>AGREGAR PRODUCTO:</h2>
-            <form id="add-product-form">
-                <label for="nombre">Nombre del producto:</label>
-                <input type="text" id="nombre" placeholder="nombre..." required>
-                
-                <label for="precio">Precio del producto:</label>
-                <input type="text" id="precio" placeholder="precio..." required>
-                
+        <aside class="panel-propietario" id="owner-panel" hidden>
+            <h2>AGREGAR DESEO</h2>
+            <form id="wishlist-form">
+                <input type="hidden" id="deseo-id">
+
+                <label for="nombre">Nombre del deseo:</label>
+                <input type="text" id="nombre" placeholder="Ej. Auriculares inalámbricos" required>
+
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" rows="4" placeholder="Color, talla, modelo o detalles importantes" required></textarea>
+
+                <label for="enlace">Link del producto:</label>
+                <input type="url" id="enlace" placeholder="https://www.amazon.com/..." required>
+
+                <label for="precio">Precio aproximado:</label>
+                <input type="text" id="precio" placeholder="US$59.99" required>
+
                 <label for="imagen">URL de la imagen:</label>
-                <input type="text" id="imagen" placeholder="imagen..." required>
-                
+                <input type="url" id="imagen" placeholder="https://..." required>
+
                 <div class="botones">
-                    <button type="submit">Enviar</button>
+                    <button id="submit-button" type="submit">Guardar deseo</button>
                     <button type="reset">Limpiar</button>
+                    <button id="cancel-edit-button" type="button" hidden>Cancelar edición</button>
                 </div>
             </form>
         </aside>
 
-        <!-- Modal mejorado -->
         <div id="modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
             <div class="modal-content">
-                <img id="modal-image" src="" alt="Producto">
+                <button id="modal-close" class="modal-close" type="button" aria-label="Cerrar modal">×</button>
+                <img id="modal-image" src="" alt="">
                 <h3 id="modal-title"></h3>
+                <p id="modal-description"></p>
+                <p id="modal-price"></p>
+                <p id="modal-status"></p>
+                <a id="modal-link" href="#" target="_blank" rel="noopener noreferrer">Ver producto</a>
             </div>
         </div>
     </main>
 
     <footer>
-        <p>
-            DESARROLLADO POR HUGO SÂNCHEZ
-            <nav>
-                <a class="usuario" href="https://github.com/Hugo-S-M-28" target="_blank" aria-label="Perfil de Github de Hugo Sánchez">
-                    <img src="./assets/icons/github.png" alt="Icono de Github"> Github
-                </a>
-                <a class="usuario" href="https://www.linkedin.com/in/hugo-s-197b81278/" target="_blank" aria-label="Perfil de LinkedIn de Hugo Sánchez">
-                    <img src="./assets/icons/linkedin.png" alt="Icono de LinkedIn"> LinkedIn
-                </a>
-            </nav><br>
-            ALURA LATAM - 2024
-        </p>
+        <p>DESARROLLADO POR HUGO SÁNCHEZ</p>
+        <nav>
+            <a class="usuario" href="https://github.com/Hugo-S-M-28" target="_blank" aria-label="Perfil de Github de Hugo Sánchez">
+                <img src="./assets/icons/github.png" alt="Icono de Github"> Github
+            </a>
+            <a class="usuario" href="https://www.linkedin.com/in/hugo-s-197b81278/" target="_blank" aria-label="Perfil de LinkedIn de Hugo Sánchez">
+                <img src="./assets/icons/linkedin.png" alt="Icono de LinkedIn"> LinkedIn
+            </a>
+        </nav>
+        <p>ALURA LATAM - 2024</p>
     </footer>
-    
+
     <script type="module" src="./js/script.js"></script>
 </body>
 </html>

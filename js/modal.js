@@ -1,24 +1,56 @@
-// Función para abrir el modal
-export function openModal(imageSrc, title, price) {
-    const modal = document.getElementById('modal');
-    const modalImage = document.getElementById('modal-image');
-    const modalTitle = document.getElementById('modal-title');
+const modal = document.getElementById('modal');
+const modalImage = document.getElementById('modal-image');
+const modalTitle = document.getElementById('modal-title');
+const modalDescription = document.getElementById('modal-description');
+const modalPrice = document.getElementById('modal-price');
+const modalStatus = document.getElementById('modal-status');
+const modalLink = document.getElementById('modal-link');
+const modalClose = document.getElementById('modal-close');
 
-    modalImage.src = imageSrc;
-    modalTitle.textContent = title;
+export function openModal(deseo) {
+    modalImage.src = deseo.imagen;
+    modalImage.alt = deseo.nombre;
+    modalTitle.textContent = deseo.nombre;
+    modalDescription.textContent = deseo.descripcion || 'Sin descripción';
+    modalPrice.textContent = formatPrice(deseo.precio);
+    modalStatus.textContent = deseo.reservado_por
+        ? `Reservado por ${deseo.reservado_por}`
+        : 'Disponible para reservar';
+    modalLink.href = deseo.enlace || '#';
+    modalLink.classList.toggle('disabled', !deseo.enlace);
 
     modal.classList.add('show');
+    modal.setAttribute('aria-hidden', 'false');
 }
 
-// Función para cerrar el modal
 export function closeModal() {
-    const modal = document.getElementById('modal');
     modal.classList.remove('show');
+    modal.setAttribute('aria-hidden', 'true');
 }
 
-// Evento para cerrar el modal al hacer clic fuera del contenido
-document.getElementById('modal').addEventListener('click', function (e) {
-    if (e.target === document.getElementById('modal')) {
+modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
         closeModal();
     }
 });
+
+modalClose.addEventListener('click', closeModal);
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && modal.classList.contains('show')) {
+        closeModal();
+    }
+});
+
+function formatPrice(value) {
+    const amount = Number(value);
+
+    if (Number.isNaN(amount)) {
+        return 'Precio por confirmar';
+    }
+
+    return new Intl.NumberFormat('es-MX', {
+        style: 'currency',
+        currency: 'USD',
+    }).format(amount);
+}
